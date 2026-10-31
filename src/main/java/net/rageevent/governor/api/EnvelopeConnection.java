@@ -21,4 +21,6 @@ public interface EnvelopeConnection {
     }
 
     <E extends Envelope> CompletableFuture<E> request(Transaction<E> transaction, Duration timeout);
+
+    void close();
 }
