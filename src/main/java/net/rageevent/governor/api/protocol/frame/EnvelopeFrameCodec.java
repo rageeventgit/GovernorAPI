@@ -10,7 +10,11 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageCodec;
 import lombok.RequiredArgsConstructor;
 import net.rageevent.governor.api.Envelope;
+import net.rageevent.governor.api.json.ServerModeDeserializer;
+import net.rageevent.governor.api.json.ServerTypeMixin;
 import net.rageevent.governor.api.protocol.EnvelopeRegistry;
+import net.rageevent.myriad.server.ServerModeType;
+import net.rageevent.myriad.server.ServerType;
 
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -24,6 +28,8 @@ public class EnvelopeFrameCodec extends MessageToMessageCodec<ByteBuf, EnvelopeF
     static final ObjectMapper JSON = JsonMapper.builder()
             .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
             .disable(SerializationFeature.FAIL_ON_EMPTY_BEANS)
+            .addMixIn(ServerType.class, ServerTypeMixin.class)
+            .addMixIn(ServerModeType.class, ServerModeDeserializer.class)
             .build();
 
     private final EnvelopeRegistry registry;

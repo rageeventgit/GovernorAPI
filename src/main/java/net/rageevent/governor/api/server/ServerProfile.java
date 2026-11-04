@@ -1,10 +1,12 @@
 package net.rageevent.governor.api.server;
 
+import net.rageevent.myriad.server.ServerModeType;
 import net.rageevent.myriad.server.ServerType;
 
 import java.util.Objects;
 
-public record ServerProfile(ServerRole role, ServerType serverType, String host, int port, int maxPlayers) {
+public record ServerProfile(ServerRole role, ServerType serverType, ServerModeType modeType, String host, int port,
+                            int maxPlayers) {
 
     public ServerProfile {
         Objects.requireNonNull(role, "role");
@@ -14,17 +16,17 @@ public record ServerProfile(ServerRole role, ServerType serverType, String host,
     }
 
     public static ServerProfile proxy() {
-        return new ServerProfile(ServerRole.PROXY, null, null, 0, 0);
+        return new ServerProfile(ServerRole.PROXY, null, null, null, 0, 0);
     }
 
-    public static ServerProfile backend(ServerType serverType, String host, int port, int maxPlayers) {
-        return new ServerProfile(ServerRole.GAME_SERVER, serverType, host, port, maxPlayers);
+    public static ServerProfile backend(ServerType serverType, ServerModeType modeType, String host, int port, int maxPlayers) {
+        return new ServerProfile(ServerRole.GAME_SERVER, serverType, modeType, host, port, maxPlayers);
     }
 
     /*
         A game server that is already registered through its own config.
      */
-    public static ServerProfile backend(ServerType serverType, int maxPlayers) {
-        return new ServerProfile(ServerRole.GAME_SERVER, serverType, null, 0, maxPlayers);
+    public static ServerProfile backend(ServerType serverType, ServerModeType modeType, int maxPlayers) {
+        return new ServerProfile(ServerRole.GAME_SERVER, serverType, modeType, null, 0, maxPlayers);
     }
 }
