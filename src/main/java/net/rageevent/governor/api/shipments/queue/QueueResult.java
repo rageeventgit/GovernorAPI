@@ -1,9 +1,10 @@
 package net.rageevent.governor.api.shipments.queue;
 
 import net.rageevent.governor.api.Envelope;
+import net.rageevent.myriad.server.ServerModeType;
 import net.rageevent.myriad.server.ServerType;
 
-public record QueueResult(Status status, ServerType queue, int position, int size) implements Envelope {
+public record QueueResult(Status status, ServerModeType queue, int position, int size) implements Envelope {
 
     public enum Status {
         JOINED,
