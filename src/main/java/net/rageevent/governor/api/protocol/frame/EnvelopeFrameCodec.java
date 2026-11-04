@@ -33,7 +33,7 @@ public class EnvelopeFrameCodec extends MessageToMessageCodec<ByteBuf, EnvelopeF
         ByteBuf buffer = context.alloc().buffer();
         try {
             EnvelopeFrame.EnvelopeType envelopeType = frame.type();
-            buffer.writeLong(envelopeType.code());
+            buffer.writeByte(envelopeType.code());
             buffer.writeLong(frame.requestId());
 
             if (envelopeType == EnvelopeFrame.EnvelopeType.ERROR) {
@@ -44,6 +44,7 @@ public class EnvelopeFrameCodec extends MessageToMessageCodec<ByteBuf, EnvelopeF
                 buffer.writeInt(key.id());
                 buffer.writeBytes(JSON.writeValueAsBytes(frame.envelope()));
             }
+            out.add(buffer);
         } catch (Throwable error) {
             buffer.release();
             throw error;
@@ -59,6 +60,7 @@ public class EnvelopeFrameCodec extends MessageToMessageCodec<ByteBuf, EnvelopeF
             out.add(EnvelopeFrame.error(requestId, buffer.toString(StandardCharsets.UTF_8)));
             return;
         }
+
         int groupId = buffer.readInt();
         int packetId = buffer.readInt();
         Envelope envelope;
