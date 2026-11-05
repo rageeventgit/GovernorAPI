@@ -22,6 +22,7 @@ public class SerialExecutor implements Executor {
 
     @Override public void execute(Runnable command) {
         tasks.add(command);
+        scheduleDrain();
     }
 
     private void scheduleDrain() {
