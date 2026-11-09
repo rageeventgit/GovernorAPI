@@ -5,15 +5,11 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import net.rageevent.myriad.server.GameType;
-import net.rageevent.myriad.server.LobbyType;
-import net.rageevent.myriad.server.ServerType;
+import net.rageevent.myriad.api.server.LobbyType;
+import net.rageevent.myriad.api.server.ServerType;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class ServerTypeDeserializer extends StdDeserializer<ServerType> {
 

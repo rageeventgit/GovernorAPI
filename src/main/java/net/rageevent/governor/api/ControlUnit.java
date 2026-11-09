@@ -13,12 +13,10 @@ import net.rageevent.governor.api.protocol.internal.EnvelopeChannelInit;
 import net.rageevent.governor.api.server.ServerProfile;
 import net.rageevent.governor.api.server.ServerState;
 
-import javax.naming.ldap.Control;
 import java.time.Duration;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.*;
-import java.util.function.Consumer;
 
 public final class ControlUnit implements AutoCloseable {
 

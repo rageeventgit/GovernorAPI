@@ -11,13 +11,13 @@ import net.rageevent.governor.api.Envelope;
 import net.rageevent.governor.api.Transaction;
 import net.rageevent.governor.api.exceptions.EnvelopeException;
 import net.rageevent.governor.api.exceptions.GovernorException;
+import net.rageevent.governor.api.protocol.EnvelopeEndpoint;
+import net.rageevent.governor.api.protocol.Protocol;
+import net.rageevent.governor.api.protocol.frame.EnvelopeFrame;
 import net.rageevent.governor.api.shipments.system.HandshakeRequest;
 import net.rageevent.governor.api.shipments.system.HandshakeResponse;
 import net.rageevent.governor.api.shipments.system.PingRequest;
 import net.rageevent.governor.api.shipments.system.PingResponse;
-import net.rageevent.governor.api.protocol.EnvelopeEndpoint;
-import net.rageevent.governor.api.protocol.Protocol;
-import net.rageevent.governor.api.protocol.frame.EnvelopeFrame;
 
 import java.io.IOException;
 import java.util.concurrent.CompletableFuture;

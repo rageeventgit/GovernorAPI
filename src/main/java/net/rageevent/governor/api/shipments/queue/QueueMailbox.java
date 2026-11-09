@@ -3,10 +3,6 @@ package net.rageevent.governor.api.shipments.queue;
 import lombok.experimental.UtilityClass;
 import net.rageevent.governor.api.Mailbox;
 import net.rageevent.governor.api.protocol.EnvelopeRegistry;
-import net.rageevent.governor.api.shipments.system.HandshakeRequest;
-import net.rageevent.governor.api.shipments.system.HandshakeResponse;
-import net.rageevent.governor.api.shipments.system.PingRequest;
-import net.rageevent.governor.api.shipments.system.PingResponse;
 
 @UtilityClass
 public class QueueMailbox {

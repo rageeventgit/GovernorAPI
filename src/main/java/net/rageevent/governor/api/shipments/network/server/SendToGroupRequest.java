@@ -2,7 +2,7 @@ package net.rageevent.governor.api.shipments.network.server;
 
 import net.rageevent.governor.api.Transaction;
 import net.rageevent.governor.api.shipments.network.player.TransferResult;
-import net.rageevent.myriad.server.ServerType;
+import net.rageevent.myriad.api.server.ServerType;
 
 import java.util.UUID;
 

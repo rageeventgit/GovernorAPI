@@ -5,9 +5,7 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import net.rageevent.myriad.server.LobbyType;
-import net.rageevent.myriad.server.ServerModeType;
-import net.rageevent.myriad.server.ServerType;
+import net.rageevent.myriad.api.server.ServerModeType;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -15,7 +13,7 @@ import java.util.Optional;
 public class ServerModeDeserializer extends StdDeserializer<ServerModeType> {
 
     protected ServerModeDeserializer() {
-        super(ServerType.class);
+        super(ServerModeType.class);
     }
 
 

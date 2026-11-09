@@ -1,7 +1,8 @@
 package net.rageevent.governor.api.server;
 
-import net.rageevent.myriad.server.ServerModeType;
-import net.rageevent.myriad.server.ServerType;
+
+import net.rageevent.myriad.api.server.ServerModeType;
+import net.rageevent.myriad.api.server.ServerType;
 
 import java.util.Objects;
 

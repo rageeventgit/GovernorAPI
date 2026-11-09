@@ -7,9 +7,9 @@ import net.rageevent.governor.api.EnvelopeConnection;
 import net.rageevent.governor.api.Transaction;
 import net.rageevent.governor.api.exceptions.EnvelopeTimeoutException;
 import net.rageevent.governor.api.exceptions.GovernorException;
-import net.rageevent.governor.api.protocol.frame.EnvelopeFrame;
 import net.rageevent.governor.api.protocol.EnvelopeRegistry;
 import net.rageevent.governor.api.protocol.SerialExecutor;
+import net.rageevent.governor.api.protocol.frame.EnvelopeFrame;
 
 import java.net.SocketAddress;
 import java.time.Duration;

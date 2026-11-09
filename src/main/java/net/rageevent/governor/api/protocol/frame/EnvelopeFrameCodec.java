@@ -10,12 +10,11 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageCodec;
 import lombok.RequiredArgsConstructor;
 import net.rageevent.governor.api.Envelope;
-import net.rageevent.governor.api.json.ServerModeDeserializer;
 import net.rageevent.governor.api.json.ServerModeTypeMixin;
 import net.rageevent.governor.api.json.ServerTypeMixin;
 import net.rageevent.governor.api.protocol.EnvelopeRegistry;
-import net.rageevent.myriad.server.ServerModeType;
-import net.rageevent.myriad.server.ServerType;
+import net.rageevent.myriad.api.server.ServerModeType;
+import net.rageevent.myriad.api.server.ServerType;
 
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;

@@ -1,9 +1,6 @@
 package net.rageevent.governor.api.protocol;
 
-import io.netty.bootstrap.ServerBootstrap;
-
 import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -20,7 +17,8 @@ public class SerialExecutor implements Executor {
         this.delegate = delegate;
     }
 
-    @Override public void execute(Runnable command) {
+    @Override
+    public void execute(Runnable command) {
         tasks.add(command);
         scheduleDrain();
     }
