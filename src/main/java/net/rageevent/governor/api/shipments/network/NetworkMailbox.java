@@ -4,6 +4,9 @@ import lombok.experimental.UtilityClass;
 import net.rageevent.governor.api.Mailbox;
 import net.rageevent.governor.api.protocol.EnvelopeRegistry;
 import net.rageevent.governor.api.shipments.network.player.*;
+import net.rageevent.governor.api.shipments.network.player.data.PullUserData;
+import net.rageevent.governor.api.shipments.network.player.data.PushUserData;
+import net.rageevent.governor.api.shipments.network.player.data.UserDataResponse;
 import net.rageevent.governor.api.shipments.network.server.*;
 
 @UtilityClass
@@ -25,6 +28,9 @@ public class NetworkMailbox {
                 .add(11, SendToServerRequest.class)
                 .add(12, UpdateServerState.class)
                 .add(13, SupplyGameProfile.class)
+                .add(14, PullUserData.class)
+                .add(15, PushUserData.class)
+                .add(16, UserDataResponse.class)
         ;
     }
 
