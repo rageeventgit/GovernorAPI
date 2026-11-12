@@ -16,6 +16,7 @@ public enum Mailbox {
     SYSTEM(0),
     NETWORK(1),
     QUEUE(2),
+    PARTY(3),
 
     ;
     private static final Map<Integer, Mailbox> BY_ID = Arrays.stream(values())

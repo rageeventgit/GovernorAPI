@@ -9,7 +9,7 @@ import net.rageevent.governor.api.shipments.network.server.*;
 @UtilityClass
 public class NetworkMailbox {
 
-    public void register(EnvelopeRegistry registry){
+    public void register(EnvelopeRegistry registry) {
         registry.mailbox(Mailbox.NETWORK)
                 .add(0, FindPlayerRequest.class)
                 .add(1, FindPlayerResult.class)
@@ -17,13 +17,15 @@ public class NetworkMailbox {
                 .add(3, PlayerLeftNetwork.class)
                 .add(4, PlayerSwitchedServer.class)
                 .add(5, ProxyRoster.class)
-                .add(6,TransferPlayerRequest.class)
+                .add(6, TransferPlayerRequest.class)
                 .add(7, TransferResult.class)
                 .add(8, RegisterGameServer.class)
                 .add(9, RemoveGameServer.class)
                 .add(10, SendToGroupRequest.class)
                 .add(11, SendToServerRequest.class)
-                .add(12, UpdateServerState.class);
+                .add(12, UpdateServerState.class)
+                .add(13, SupplyGameProfile.class)
+        ;
     }
 
 }

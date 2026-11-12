@@ -6,6 +6,7 @@ import net.rageevent.governor.api.Mailbox;
 import net.rageevent.governor.api.Transaction;
 import net.rageevent.governor.api.exceptions.GovernorException;
 import net.rageevent.governor.api.shipments.network.NetworkMailbox;
+import net.rageevent.governor.api.shipments.party.PartyMailbox;
 import net.rageevent.governor.api.shipments.queue.QueueMailbox;
 import net.rageevent.governor.api.shipments.system.SystemMailbox;
 
@@ -35,7 +36,7 @@ public class EnvelopeRegistry {
         SystemMailbox.register(envelopeRegistry);
         QueueMailbox.register(envelopeRegistry);
         NetworkMailbox.register(envelopeRegistry);
-
+        PartyMailbox.register(envelopeRegistry);
         return envelopeRegistry;
     }
 
