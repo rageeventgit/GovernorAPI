@@ -6,7 +6,7 @@ import net.rageevent.myriad.api.server.ServerType;
 
 import java.util.Objects;
 
-public record ServerProfile(ServerRole role, ServerType serverType, ServerModeType modeType, String host, int port,
+public record ServerProfile(ServerRole role, ServerType serverType, String host, int port,
                             int maxPlayers) {
 
     public ServerProfile {
@@ -17,17 +17,17 @@ public record ServerProfile(ServerRole role, ServerType serverType, ServerModeTy
     }
 
     public static ServerProfile proxy() {
-        return new ServerProfile(ServerRole.PROXY, null, null, null, 0, 0);
+        return new ServerProfile(ServerRole.PROXY, null, null, 0, 0);
     }
 
-    public static ServerProfile backend(ServerType serverType, ServerModeType modeType, String host, int port, int maxPlayers) {
-        return new ServerProfile(ServerRole.GAME_SERVER, serverType, modeType, host, port, maxPlayers);
+    public static ServerProfile backend(ServerType serverType, String host, int port, int maxPlayers) {
+        return new ServerProfile(ServerRole.GAME_SERVER, serverType, host, port, maxPlayers);
     }
 
     /*
         A game server that is already registered through its own config.
      */
-    public static ServerProfile backend(ServerType serverType, ServerModeType modeType, int maxPlayers) {
-        return new ServerProfile(ServerRole.GAME_SERVER, serverType, modeType, null, 0, maxPlayers);
+    public static ServerProfile backend(ServerType serverType, int maxPlayers) {
+        return new ServerProfile(ServerRole.GAME_SERVER, serverType, null, 0, maxPlayers);
     }
 }
